@@ -1,108 +1,26 @@
-#include <stdio.h>
 #include "holberton.h"
+#include <stdio.h>
 
 /**
- *_strlen - returns the length of a string
- *@str:a string of length to be returned
- *Return: returns the length of a string
+ * _strncat - check the code for Holberton School students.
+ *@dest : variable
+ *@src : variable
+ *@n : the integer
+ * Return: Concatinated string.
  */
-int _strlen(char *str)
-{
-	int length = 0;
 
-	while (*str)
-	{
-		str++;
-		length++;
-	}
-
-	return (length);
-
-}
-
-
-/**
- *_strncat - concatinates two strings
- *@dest:destination pointer
- *@src:pointer to a string
- *@n:amount tot be concatenated
- *Return: concatinated string
- */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *cat = dest + _strlen(dest);
-	int length;
-
-	if (n > _strlen(src) + _strlen(dest))
-		length =  _strlen(dest) + _strlen(src);
-	else
-		length = _strlen(dest) + n;
-
-	while (*src && n > 0)
-	{
-		*cat += *src;
-		src++;
-		cat++;
-		n--;
-	}
-	if (n > 0)
-		*cat += '\0';
-	cat -= (length);
-	*dest = *cat;
-
-	return (cat);
-}
-#include <stdio.h>
-#include "holberton.h"
-
-/**
- *_strlen - returns the length of a string
- *@str:a string of length to be returned
- *Return: returns the length of a string
- */
-int _strlen(char *str)
+int i, a;
+for (i = 0; dest[i] != '\0'; i++)
 {
-	int length = 0;
-
-	while (*str)
-	{
-		str++;
-		length++;
-	}
-
-	return (length);
-
+continue;
 }
-
-
-/**
- *_strncat - concatinates two strings
- *@dest:destination pointer
- *@src:pointer to a string
- *@n:amount tot be concatenated
- *Return: concatinated string
- */
-char *_strncat(char *dest, char *src, int n)
+for (a = 0; a < n && src[a] != '\0'; a++)
 {
-	char *cat = dest + _strlen(dest);
-	int length;
-
-	if (n > _strlen(src) + _strlen(dest))
-		length =  _strlen(dest) + _strlen(src);
-	else
-		length = _strlen(dest) + n;
-
-	while (*src && n > 0)
-	{
-		*cat += *src;
-		src++;
-		cat++;
-		n--;
-	}
-	if (n > 0)
-		*cat += '\0';
-	cat -= (length);
-	*dest = *cat;
-
-	return (cat);
+dest[i] += src[a];
+i++;
+}
+dest[i] += '\0';
+return (dest);
 }
